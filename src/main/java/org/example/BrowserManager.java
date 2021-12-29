@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 public class BrowserManager extends BasePage {
 
-    LoadProp loadProp = new LoadProp(); // loadProp method declaration
+    LoadProp loadProp = new LoadProp(); // loadProp object
 
     String browserName = "Chrome";
 

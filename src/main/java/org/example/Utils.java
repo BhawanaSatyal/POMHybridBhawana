@@ -38,7 +38,7 @@ public class Utils extends BrowserManager{
 
     public static String currentTimeStamp() {
         Date date = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyhhmmss");
+        SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyhhmmss"); // date format
         return sdf.format(date);
 
     }

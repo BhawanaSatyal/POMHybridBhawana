@@ -8,6 +8,8 @@ public class StepDefs {
     CheckOutPage checkOutPage = new CheckOutPage();
     RegistrationPage registrationPage = new RegistrationPage();
     SocialMedia socialMedia = new SocialMedia();
+    NewOnlineStore newOnlineStore = new NewOnlineStore();
+    AlertPop alertPop = new AlertPop();
 
 
 
@@ -49,6 +51,7 @@ public class StepDefs {
         registrationPage.userEntersRegistrationDetails();
         registrationPage.clickOnRegister1();
         checkOutPage.verifyUserIsLoggedInSuccessfully();
+
 
 
     }
@@ -124,22 +127,68 @@ public class StepDefs {
         registrationPage.verifyUserIsHomePage();
 
     }
-    @When("I click on social media icon")
-    public void i_click_on_social_media_icon() {
-        socialMedia.verifyUserIsLinkedToFacebookPage();
-        socialMedia.verifynopCommerceIsOnFaceBookPage();
-        socialMedia.verifyUserIsLinkedToTwitterPage();
-        socialMedia.verifynopCommerceIsTwitterPage();
-        socialMedia.verifyUserIsLinkedToYoutubePage();
-        socialMedia.verifynopCommerceIsYoutubePage();
 
-    }
     @Then("I should be navigated to social media on a new page")
     public void i_should_be_navigated_to_social_media_on_a_new_page() {
-
-
+        socialMedia.handleWindow();
     }
 
 
+    @When("I click on {string} icon")
+    public void iClickOnIcon(String socialLink) {
+        socialMedia.clickONSocialLinks(socialLink);
+    }
+
+
+
+    @Given("I am registered user")
+    public void i_am_registered_user() {
+        i_am_already_logged_in_as_registered_user();
+        newOnlineStore.verifyUserIsRegistered();
+
+    }
+    @When("I click on details under new online")
+    public void i_click_on_details_under_new_online() {
+        newOnlineStore.clickOnDetails();
+
+
+    }
+    @When("I fill up details on leave your comment")
+    public void i_fill_up_details_on_leave_your_comment() {
+        newOnlineStore.fillUpLeaveYourComment();
+
+    }
+    @When("click on new comment")
+    public void click_on_new_comment() {
+
+    }
+    @Then("News comment message should be added successfully")
+    public void news_comment_message_should_be_added_successfully() {
+   newOnlineStore.verifyNewCommentAddedSuccessfully();
+    }
+    @Then("comment must be displayed in ascending order")
+    public void comment_must_be_displayed_in_ascending_order() {
+
+    }
+
+    @When("I should see Vote button")
+    public void i_should_see_vote_button() {
+        alertPop.verifyVoteButtonIsVisible();
+
+
+    }
+    @When("I click on Vote")
+    public void i_click_on_vote() {
+        alertPop.clickOnVoteButton();
+
+    }
+    @Then("I should get alert button on screen")
+    public void i_should_get_alert_button_on_screen() {
+
+    }
+    @Then("I should be able to click on it")
+    public void i_should_be_able_to_click_on_it() {
+
+    }
 }
 

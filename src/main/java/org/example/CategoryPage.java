@@ -8,10 +8,10 @@ import org.openqa.selenium.support.Color;
 import org.testng.Assert;
 
 public class CategoryPage extends Utils {
-    Actions actions = new Actions(driver);
+    Actions actions = new Actions(driver); // action object
   By _txt_Search = By.id("small-searchterms");
 
-    By _pageTitle = By.xpath("//h1");
+    By _pageTitle = By.xpath("//h1"); // find by
 
 
 
